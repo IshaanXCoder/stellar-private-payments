@@ -26,7 +26,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # cargo-semver-checks needs the full git history to compare versions
           fetch-depth: 0
@@ -73,7 +73,7 @@ jobs:
 
       - name: Check semver compatibility
         if: steps.get-baseline.outputs.skip == 'false'
-        uses: obi1kenobi/cargo-semver-checks-action@5b298c9520f7096a4683c0bd981a7ac5a7e249ae # v2
+        uses: obi1kenobi/cargo-semver-checks-action@6b69fcf40e9b5fb17adeb57e4b6ecd020649a239 # v2
         with:
           baseline-rev: ${{ steps.get-baseline.outputs.baseline_rev }}
           verbose: true
